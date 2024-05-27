@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perpustakaan SMAN 108 Jakarta</title>
-    <link rel="stylesheet" href="dist/output.css" />
+    <link rel="stylesheet" href="dist/css/final.css" />
+    <script>
+      if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body>
     <!-- Header Start -->
@@ -21,25 +28,40 @@
               <span class="hamburger-line transition duration-300 ease-in-out"></span>
               <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
             </button>
-            <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-white shadow-lg dark:bg-dark lg:dark:bg-transparent dark:shadow-slate-500 rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+            >
               <ul class="block lg:flex">
                 <li class="group">
-                  <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Beranda</a>
+                  <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Beranda</a>
                 </li>
                 <li class="group">
-                  <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Tentang Saya</a>
+                  <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Tentang Saya</a>
                 </li>
                 <li class="group">
-                  <a href="#koleksi" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Koleksi Terbaru</a>
+                  <a href="#koleksi" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Koleksi Terkini</a>
                 </li>
                 <li class="group">
-                  <a href="#perpus" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Perpustakaan</a>
+                  <a href="#perpus" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Perpustakaan</a>
                 </li>
                 <li class="group">
-                  <a href="#blog" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Blog</a>
+                  <a href="#blog" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Blog</a>
                 </li>
                 <li class="group">
-                  <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Kontak</a>
+                  <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Kontak</a>
+                </li>
+                <li class="mt-3 lg:mt-0 flex items-center pl-8">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500">light</span>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                        <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-sm text-slate-500">dark</span>
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -50,13 +72,13 @@
     <!-- Header End -->
 
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full self-center px-4 lg:w-1/2">
-            <h1 class="text-base font-semibold text-primary md:text-xl">Halo Semua 👋, saya <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl">Perpustakaan MH Thamrin SMAN 108 Jakarta</span></h1>
-            <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Ruang Baca | <sapan class="text-dark">Jendela Dunia</sapan></h2>
-            <p class="font-medium text-secondary mb-10 leading-relaxed">Dengan membaca akan membuka jendela dunia dan <span class="text-dark font-bold">menambah wawasan.</span></p>
+            <h1 class="text-base font-semibold text-primary md:text-xl">Halo Semua 👋, saya <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white">Perpustakaan MH Thamrin SMAN 108 Jakarta</span></h1>
+            <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Ruang Baca | <sapan class="text-dark dark:text-white">Jendela Dunia</sapan></h2>
+            <p class="font-medium text-secondary mb-10 leading-relaxed">Dengan membaca akan membuka jendela dunia dan <span class="text-dark font-bold dark:text-white">menambah wawasan.</span></p>
 
             <a href="#" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Kunjungi Saya</a>
           </div>
@@ -71,16 +93,16 @@
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full px-4 mb-10 lg:w-1/2">
             <h4 class="font-bold uppercase text-primary text-lg mb-3">Tentang Saya</h4>
-            <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">Yuk, kita berkunjung ke Perpustakaan</h2>
+            <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white">Yuk, kita berkunjung ke Perpustakaan</h2>
             <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus, totam deserunt omnis culpa odio facilis laboriosam.</p>
           </div>
           <div class="w-full px-4 lg:w-1/2">
-            <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10">Mari Berteman</h3>
+            <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-white">Mari Berteman</h3>
             <p class="font-medium text-base text-secondary mb-6 lg:text-lg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi suscipit non architecto, amet fuga accusantium error quidem cumque mollitia cupiditate labore, necessitatibus tempore iste rerum!
             </p>
@@ -131,12 +153,12 @@
     <!-- About Section End -->
 
     <!-- Koleksi Section Start -->
-    <section id="koleksi" class="pt-36 pb-16 bg-slate-100">
+    <section id="koleksi" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
             <h4 class="font-semibold text-lg text-primary mb-2">Koleksi</h4>
-            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Kumpulan Koleksi Terkini</h2>
+            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Kumpulan Koleksi Terkini</h2>
             <p class="font-medium text-md text-secondary md:text-lg">Beberapa Koleksi buku bacaan pilihan yang dimiliki oleh perputakaan MH Thamrin SMAN 108 Jakarta yang dapat kalian baca secara langsung</p>
           </div>
         </div>
@@ -146,7 +168,7 @@
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/img/koleksi-baru/Screenshot 2024-05-25 094240-1.png" alt="Koleksi 1" width="full" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Hari yang Mengesankan</h3>
+            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Hari yang Mengesankan</h3>
             <p class="font-medium text-base text-secondary">
               Buku ini cerita ini merupakan terjemahan dari judul asli "<i class="font-bold">My Favourite Day Ever</i>" bercerita tentang seorang anak yang menikmati hari yang sangat berkesan.
             </p>
@@ -155,7 +177,7 @@
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/img/koleksi-baru/Screenshot 2024-05-25 094537-1.png" alt="Koleksi 2" width="full" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Hidup saat Virus Merebak</h3>
+            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Hidup saat Virus Merebak</h3>
             <p class="font-medium text-base text-secondary">
               Buku ini ditulis dan diterjemahkan untuk mengajarkan apa yang harus dilakukan untuk menghadapi virus kepada anak-anak. Buku ini merupakan catatan keseharian penulis yang diceritakan dari sudut pandang anak-anak.
             </p>
@@ -164,7 +186,7 @@
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/img/koleksi-baru/Screenshot 2024-05-25 094806-1.png" alt="Koleksi 3" width="full" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Seni di Sekitar Kita</h3>
+            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Seni di Sekitar Kita</h3>
             <p class="font-medium text-base text-secondary">
               Buku berjudul asli "<i class="font-bold">Art Is Everywhere - Here, There and in Everyday Objects.</i>" yang telah diterjemahkan ini bercerita tentang berbagai benda yang dapat kita jadikan sebuah seni.
             </p>
@@ -173,14 +195,14 @@
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/img/koleksi-baru/Screenshot 2024-05-25 094931-1.png" alt="Koleksi 4" width="full" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Kamus Filologi</h3>
+            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Kamus Filologi</h3>
             <p class="font-medium text-base text-secondary">Menurut Kamus Besar Bahasa Indonesia (KBBI) filologi adalah ilmu tentang bahasa, kebudayaan, dan sejarah suatu bangsa sebagaimana yang terdapat dalam bahan tertulis.</p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/img/koleksi-baru/Screenshot 2024-05-25 095339-1.png" alt="Koleksi 5" width="full" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Mengintip Tanah Wetu Telu dari Sebalik Reruntuhan Gempa</h3>
+            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Mengintip Tanah Wetu Telu dari Sebalik Reruntuhan Gempa</h3>
             <p class="font-medium text-base text-secondary">Buku bacaan ini menceritakan tentang keadaan tanah wetu telu yang berada di Lombok Utara setelah terjadinya gempa bumi.</p>
           </div>
         </div>
@@ -189,12 +211,12 @@
     <!-- Koleksi Section End -->
 
     <!-- Perpus section Start -->
-    <section id="perpus" class="pt-36 pb-32 bg-slate-800">
+    <section id="perpus" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto text-center mb-16">
             <h4 class="font-semibold text-lg text-primary mb-2">Perpustakaan</h4>
-            <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl">Kunjungi juga Perpustakaan Lainnya</h2>
+            <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-dark">Kunjungi juga Perpustakaan Lainnya</h2>
             <p class="font-medium text-md text-secondary md:text-lg">
               Perpustakan-perpustakaan ini juga dapat kalian kunjungi lho! Baik secara online atau bisa datang langsung jika ingin melihat koleksi-koleksi buku yang dapat menambah wawasan.
             </p>
@@ -235,23 +257,23 @@
     <!-- Perpus section End -->
 
     <!-- Blog section Start -->
-    <section id="blog" class="pt-36 pb-32 bg-slate-100">
+    <section id="blog" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
             <h4 class="font-semibold text-lg text-primary mb-2">Blog</h4>
-            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Tulisan Terkini</h2>
+            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Tulisan Terkini</h2>
             <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus officiis dignissimos commodi nostrum ex amet odio.</p>
           </div>
         </div>
 
         <div class="flex flex-wrap">
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="https://source.unsplash.com/360x200?programming" alt="programming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Tips Belajar Programming</a>
+                  <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">Tips Belajar Programming</a>
                 </h3>
                 <p class="font-medium text-base text-secondary mb-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, aperiam?</p>
                 <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-md hover:opacity-80">Baca Selengkapnya</a>
@@ -259,11 +281,11 @@
             </div>
           </div>
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="https://source.unsplash.com/360x200?kuliner" alt="wisata kuliner" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Review Jajanan Pasar</a>
+                  <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">Review Jajanan Pasar</a>
                 </h3>
                 <p class="font-medium text-base text-secondary mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus laudantium perferendis nihil autem animi obcaecati architecto?</p>
                 <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-md hover:opacity-80">Baca Selengkapnya</a>
@@ -271,11 +293,11 @@
             </div>
           </div>
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="https://source.unsplash.com/360x200?destinasi+wisata" alt="wisata" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Destinasi Wisata di Jakarta</a>
+                  <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">Destinasi Wisata di Jakarta</a>
                 </h3>
                 <p class="font-medium text-base text-secondary mb-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa nulla quo, vero odio reiciendis earum?</p>
                 <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-md hover:opacity-80">Baca Selengkapnya</a>
@@ -288,12 +310,12 @@
     <!-- Blog section End -->
 
     <!-- Contact section start -->
-    <section id="contact" class="pt-36 pb-32">
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
             <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
-            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Hubungi Saya</h2>
+            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Hubungi Saya</h2>
             <p class="font-medium text-md text-secondary md:text-lg">Kirimkan Pesan dan Kesan atau Kritik dan Saran kepada kami melalui form yang telah disediakan.</p>
           </div>
         </div>
@@ -419,6 +441,12 @@
       </div>
     </footer>
     <!-- Footer End -->
+
+    <!-- Back to top start -->
+    <a href="#home" class="fixed hidden justify-center items-center bottom-4 p-4 right-4 z-[9999] h-14 w-14 rounded-full bg-primary hover:animate-pulse" id="to-top">
+      <span class="mt-2 block w-5 h-5 border-t-2 border-l-2 rotate-45"></span>
+    </a>
+    <!-- Back to top End -->
 
     <script src="dist/js/script.js"></script>
   </body>
